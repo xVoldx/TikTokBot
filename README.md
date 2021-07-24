@@ -1,5 +1,7 @@
 # TikTokBot
 
+## Easy Deploy:
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 --- If you want to join the project or support, contact me: georgeseldish@mail.ru---
 
@@ -14,3 +16,10 @@ plans:
 6) connect relation database(save video there)                []
 7) make a webpage or grafic interface to see statistics       []
 8) ...
+
+
+## Buildpacks
+
+- [ ] heroku/python
+- [ ] https://github.com/heroku/heroku-buildpack-chromedriver
+- [ ] https://github.com/heroku/heroku-buildpack-google-chrome

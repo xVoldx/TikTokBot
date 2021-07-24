@@ -16,8 +16,8 @@ class TikTokBot:
         self.username = email
         self.password = password
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.options.add_argument('--disable-gpu')
-        chrome_options.options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--no-sandbox')
         chrome_options.binary_location = chrome_bin
         self.browser = webdriver.Chrome(
             executable_path=CHROMEDRIVER_PATH,

@@ -8,6 +8,8 @@ from selenium.webdriver.common.keys import Keys
 
 from inst_auth import username, password
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
 class Parser:
     def __init__(self, username, password):
@@ -20,14 +22,16 @@ class Parser:
         }  # choose device to emulate
 
         # define a variable to hold all the configurations we want
+        
         chrome_options = webdriver.ChromeOptions()
-
+        chrome_options.options.add_argument('--disable-gpu')
+        chrome_options.options.add_argument('--no-sandbox')
         # add the mobile emulation to the chrome options variable
         chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 
         # create driver, pass it the path to the chromedriver file and the special configurations you want to run
         self.browser = webdriver.Chrome(
-            executable_path='chromedriver.exe',
+            executable_path=CHROMEDRIVER_PATH,
             options=chrome_options)
 
     def close_browser(self):

@@ -8,13 +8,20 @@ from selenium.webdriver.common.keys import Keys
 
 from captcha import CaptchaSolver
 from tik_tok_auth import email, password
-
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
 class TikTokBot:
     def __init__(self, email, password):
         self.username = email
         self.password = password
-        self.browser = webdriver.Chrome("chromedriver.exe")
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.options.add_argument('--disable-gpu')
+        chrome_options.options.add_argument('--no-sandbox')
+        chrome_options.binary_location = chrome_bin
+        self.browser = webdriver.Chrome(
+            executable_path=CHROMEDRIVER_PATH,
+            options=chrome_options)
 
     def close_browser(self):
         self.browser.close()

@@ -26,7 +26,6 @@ class Parser:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--no-sandbox')
-        chrome_options.binary_location = chrome_bin        
         # add the mobile emulation to the chrome options variable
         chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 
